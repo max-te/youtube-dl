@@ -167,6 +167,14 @@ Alternatively, refer to the [developer instructions](#developer-instructions) fo
                                      service), but who also have a description,
                                      use --match-filter "like_count > 100 &
                                      dislike_count <? 50 & description" .
+                                     For matching strings, the oparators ~= and
+                                     !~= check for string containment and
+                                     exclusion. The operators *= and !*= search
+                                     for a regular expression.
+                                     For example, to only match videos which
+                                     have neither 'sponsored' nor 'Sponsored' in
+                                     the title, use --match-filter "title !*=
+                                     '[Ss]ponsored'"
     --no-playlist                    Download only the video, if the URL refers
                                      to a video and a playlist.
     --yes-playlist                   Download the playlist, if the URL refers to
